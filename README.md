@@ -1,120 +1,39 @@
-## 🦠 Cholera Outbreak Predictor
+# Cholera Outbreak Predictor 🦠📊
 
-This project uses a machine learning approach to predict cholera outbreaks in Nigeria based on historical data. It supports early public health response and improves decision-making for outbreak prevention and control.
+This AI-enabled project was created during my 3MTT learning journey. It attempts to predict potential cholera outbreaks in Nigeria by leveraging machine learning with historical weekly data.
 
----
+## Why This Project?
 
-## 📌 Project Overview
+Cholera remains endemic in Nigeria. During my learning journey, I created this project to understand the role of AI in bolstering public health initiatives. I developed a classifier based on data pulled from the Nigerian Centre for Disease Control (NCDC) Weekly Epidemiological Reports (2021–2025) that marks weeks as **“Outbreak”** or **“No Outbreak”**.
 
-Cholera remains a recurring public health threat in Nigeria. Using supervised learning techniques, this project classifies weekly state-level reports as either an outbreak or no outbreak, based on reported suspected cases and deaths.
+## Project Structure
 
-The project includes:
+- `Cholera_outbreak_predictor.ipynb`: Main notebook containing the complete workflow for data analysis, including data cleaning, exploratory analysis, model creation, and evaluation.
+- `Cholera_Report_Cleaned_new.csv`: Preprocessed dataset used for model building and analysis, compiled from NCDC Weekly Epidemiological Reports.
+- `README.md`: Project overview, objectives, methodologies, and workflow.
+- `.pkl` files: Trained logistic regression model(s) for prediction.
 
-Data preprocessing
+## What the Project Covers
 
-Exploratory Data Analysis (EDA)
+- **Data Collection**: Weekly cholera reports from NCDC including suspected and confirmed cases, deaths, and case fatality rates.
+- **Data Cleaning & Exploration**: Checked for duplicates and missing values; explored patterns using data visualization.
+- **Feature Engineering**: Created new features from existing relevant data to improve model performance.
+- **Model Training**: Tested multiple classification models; chose Logistic Regression for its reasonable accuracy.
+- **Model Evaluation**:
+  - *No Outbreak (Class 0)*: Recall = 1.00, Precision = 0.92
+  - *Outbreak (Class 1)*: Precision = 1.00, Recall = 0.50
+  - Threshold adjusted to improve outbreak detection.
 
-Model training and evaluation
+## Insights
 
-Threshold tuning to improve recall
+The model performs well in detecting weeks with no outbreaks. With threshold tuning, its ability to detect potential outbreaks improves significantly.
 
-saving the final model for future reuse
+## Tools & Technologies
 
----
+- **Platform**: Google Colab  
+- **Languages**: Python  
+- **Libraries**: Pandas, NumPy, Seaborn, Matplotlib, Scikit-learn  
 
-## 📁 Project Structure
--cholera-outbreak-predictor/
-+cholera-outbreak-predictor/
+## Data Source
 
- │
- 
- ├── data/
- 
- │   └── cholera_dataset.csv  # Raw dataset
- 
- │
- 
- ├── models/
- 
- │   └── cholera_model.pkl    # Trained ML model
- 
- │
- 
- ├── notebooks/
- 
- │   └── Cholera_Prediction_Model.ipynb  # Full code and analysis
- 
- │
- 
- └── README.md  # Project documentation
-
-
-## 📊 Dataset
-
-The dataset contains cholera surveillance reports with:
-- State
-- Week
-- Number of suspected cases
-- Number of deaths
-- Label (0 = No Outbreak, 1 = Outbreak)
-
-**Note:** The dataset is small and imbalanced, which influenced model performance and required threshold adjustments.
-
----
-
-## 🧠 Model Summary
-
-A classification model was trained to identify outbreak patterns.
-Key steps include:
-- Handling class imbalance
-- Performance evaluation using precision, recall, F1-score
-- Custom threshold tuning to improve recall without sacrificing precision
-
-### ✅ Final Performance:
-
-| Metric        | Value |
-|---------------|--------|
-| Accuracy      | 93%    |
-| Precision (1) | 1.00   |
-| Recall (1)    | 0.50   |
-| F1-score (1)  | 0.67   |
-
-The model is highly accurate for 'No Outbreak' cases and demonstrates high precision when it predicts an outbreak.
-
----
-
-## 🚀 How to Run
-
-1. **Clone the repository:**
-```bash
-git clone https://github.com/Ukayria/cholera-outbreak-predictor.git
-Open the notebook:
-
-2. Navigate to notebooks/Cholera_Prediction_Model.ipynb
-
-Run it in Jupyter Notebook or Google Colab
-
-3. Load the model:
-
-import joblib
-model = joblib.load('models/cholera_model.pkl')
-
-🛠 Requirements
-
-Install dependencies with:
-```bash
-pip install pandas scikit-learn matplotlib seaborn imbalanced-learn
-
-
-📌 Notes
-The model performs well but was trained on a small dataset, so further validation is needed for production use.
-
-More data and feature engineering would improve generalizability and detection accuracy.
-
-🤝 Contributions
-Want to improve the model, try other ML algorithms, or automate weekly predictions?
-Fork the repo and submit a pull request.
-
-
-
-
+[NCDC Weekly Epidemiological Reports](https://ncdc.gov.ng/reports) were used as the primary data source for this project.
