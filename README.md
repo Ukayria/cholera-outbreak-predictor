@@ -4,7 +4,7 @@ This AI-enabled project was created during my 3MTT learning journey. It attempts
 
 ## Why This Project?
 
-Cholera remains endemic in Nigeria. During my learning journey, I created this project to understand the role of AI in bolstering public health initiatives. I developed a classifier based on data pulled from the Nigerian Centre for Disease Control (NCDC) Weekly Epidemiological Reports (2021–2025) that marks weeks as **“Outbreak”** or **“No Outbreak”**.
+Cholera remains endemic in Nigeria. During my learning journey, I created this project to understand the role of AI in supporting public health initiatives. I developed a classifier based on data pulled from the Nigerian Centre for Disease Control (NCDC) Weekly Epidemiological Reports (2021–2025) that marks weeks as **“Outbreak”** or **“No Outbreak”**.
 
 ## Project Structure
 
